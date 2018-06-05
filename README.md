@@ -1,21 +1,10 @@
-=== WP Profitshare ===
-Plugin Name: WP Profitshare
-Tags: profitshare, affiliates, afiliati, conversion, conversie, marketing afiliat
-Requires at least: 3.0
-Tested up to: 4.9.1
-Stable tag: 1.4.4
-Contributors: Conversion.ro
-License: GPLv2
-
-Converts all your direct links into affiliate links in order for you to earn commissions through Profitshare. 
-
-== Description ==
+# WP Profitshare
 
 Converts all your direct links into affiliate links in order for you to earn commissions through Profitshare. Available for Profitshare Romania and Profitshare Bulgaria.
 
 Profitshare is an affiliate marketing network, that is, a performance driven marketing tool. Sign up as an affiliate and you'll earn commissions for each online sale that you generate as a result of your advertising for the partner stores.
 
-== Installation ==
+## Installation
 
 1. Upload "wp-profitshare" in the `/wp-content/plugins/ folder.
 2. Activate the plugin from the "Plugins" section in your WordPress admin panel.
@@ -25,7 +14,7 @@ Profitshare is an affiliate marketing network, that is, a performance driven mar
 
 
 
-== Functionality ==
+## Functionality
 
 <strong>The plugin settings page</strong>. For starters, in the "settings" page you need to fill in the API Key and API user fields with the info found in your Profitshare account (http://profitshare.ro/affiliate/account). After establishing a connection, you'll find the option of generating Profitshare affiliate links on your entire website database. We recommend creating a backup of your website before running this functionality. 
 
@@ -48,7 +37,7 @@ Profitshare is an affiliate marketing network, that is, a performance driven mar
 <strong>Help</strong>. Find out useful information and answers for Frequently Asked Questions 
 
 
-== Screenshots ==  
+## Screenshots
 
 1. The plugin settings page.
 2. The keyword configuration page.
@@ -59,45 +48,9 @@ Profitshare is an affiliate marketing network, that is, a performance driven mar
 7. Single Tag Image admin preview.
 
 
-== Changelog ==
-= 1.0 =
-Stable release for affiliates.
+## Changelog
 
-= 1.1 =
-Added: Now you can also convert the links from your comments section. <br>
-Added: Keywords replacement with advanced tooltip.
-
-= 1.2 =
-Added: WP Profitshare for Bulgaria release. <br>
-Fix: Small bug fixing.
-
-= 1.3 =
-Fix: Small bug fixing.
-Update: WP Profitshare is fully compatible with Wordpress 4.4 <br>
-Added: Current earnings in dashboard <br>
-Added: Limit profitshare links for each post <br>
-Added: Limit keywords for each post <br>
-Added: Tag image. Now you can add images into your post with a great tagging system that allows you to put tooltips with description and affiliate link in image. <br>
-Added: Link conversion for pages <br>
-
-= 1.3.1 =
-Fix: Small bug fixing.
-Update: WP Profitshare is fully compatible with Wordpress 4.5.2
-Update: Speed improvements
-
-= 1.3.2 =
-Fix: Small bug fixing.
-Added: Editors and Contribuitors can access now the WP Profitshare plugin
-Added: The keywords can have also diacritics (like ă,î,â,ș,ț)
-Update: WP Profitshare is fully compatible with Wordpress 4.7.5
-Update: Speed improvements
-
-= 1.3.3 =
-Fix: Small bug fixing
-Update: WP Profitshare is fully compatible with Wordpress 4.8.2
-Update: Speed improvements
-
-= 1.4.4 =
+### 1.4.4
 Fix: Auto update conversions list
 Added: Button to re-generate conversions list
 Added: Filters for conversions list [ by advertiser name, by status and by converions values ]
@@ -108,3 +61,40 @@ Update: Improve PS shorten link function, now you can short links with parameter
 https://www.domain.com/product/?X-Search-Id=944971ae3cc0550d1c7c&X-Product-Id=863881&X-Search-Page=1&X-Search-Position=0&X-Search-Action=view
 Tested up to: Wordpress 4.9.1
 Special thanks to Ionel Rohneanu (https://www.facebook.com/ionelrohneanu) for sugestions & testing.
+
+### 1.3.3
+Fix: Small bug fixing
+Update: WP Profitshare is fully compatible with Wordpress 4.8.2
+Update: Speed improvements
+
+### 1.3.2
+Fix: Small bug fixing.
+Added: Editors and Contribuitors can access now the WP Profitshare plugin
+Added: The keywords can have also diacritics (like ă,î,â,ș,ț)
+Update: WP Profitshare is fully compatible with Wordpress 4.7.5
+Update: Speed improvements
+
+### 1.3.1
+Fix: Small bug fixing.
+Update: WP Profitshare is fully compatible with Wordpress 4.5.2
+Update: Speed improvements
+
+### 1.3
+Fix: Small bug fixing.
+Update: WP Profitshare is fully compatible with Wordpress 4.4 <br>
+Added: Current earnings in dashboard <br>
+Added: Limit profitshare links for each post <br>
+Added: Limit keywords for each post <br>
+Added: Tag image. Now you can add images into your post with a great tagging system that allows you to put tooltips with description and affiliate link in image. <br>
+Added: Link conversion for pages <br>
+
+### 1.2
+Added: WP Profitshare for Bulgaria release. <br>
+Fix: Small bug fixing.
+
+### 1.1
+Added: Now you can also convert the links from your comments section. <br>
+Added: Keywords replacement with advanced tooltip.
+
+### 1.0
+Stable release for affiliates.
