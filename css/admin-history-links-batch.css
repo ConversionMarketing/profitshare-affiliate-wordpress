@@ -1,0 +1,28 @@
+.ui-progressbar {
+    position: relative;
+    border: 1px solid #CCC;
+}
+
+.ui-progressbar-value {
+    background: #0073AA;
+}
+
+.plabel {
+    position: absolute;
+    left: 15px;
+    top: 4px;
+    color: #000;
+}
+
+#processed_items{
+    margin-top: 15px;
+    overflow-y: scroll;
+    height: 150px;
+    width: 100%;
+    border: 1px solid #CCC;
+}
+
+#processed_items .item {
+    padding: 10px;
+    border-bottom: 1px solid #CCC;
+}

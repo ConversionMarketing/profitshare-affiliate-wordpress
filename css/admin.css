@@ -1,0 +1,504 @@
+.hide_display {
+    display: none;
+}
+#ps-green {
+    background-color: none;
+    background-image: url(../images/button_green.png);
+    background-repeat: none;
+    border: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 30px;
+    outline: 0;
+    width: 100px;
+}
+
+.ps-right {
+    float: right;
+}
+
+#ps-red {
+    background-color: none;
+    background-image: url(../images/button_red.png);
+    background-repeat: none;
+    border: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 30px;
+    outline: 0;
+    width: 100px;
+}
+
+.ps-new-btn {
+    display: block;
+    width: auto;
+    background: #055aaa;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid #0909a5;
+    padding: 11px;
+    margin: 10px 0;
+}
+
+.ps-new-btn.ps-green {
+    background: #41b11a;
+    border-color: #268206;
+}
+
+.ps-new-btn:hover {
+    cursor: pointer;
+}
+
+.ps-h {
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-size: 20px;
+}
+
+.ps-inline {
+    display: inline;
+}
+
+.mt9 {
+    margin-top: 9px;
+}
+
+.ps-full-width.ps-error {
+    margin-left: 18px !important;
+}
+
+.ps-input {
+    padding: 11px;
+    border-radius: 5px;
+    width: 320px;
+}
+
+.ps-generate {
+    height: 31px !important;
+    width: 105px !important;
+    padding: 3px 0 !important;
+    background: #0e5ba9;
+}
+
+.ps-option h3 {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.ps-option {
+    margin-bottom: 10px;
+}
+
+.ps-generate:hover {
+    background: #337ab7;
+}
+
+.ps-fa {
+    color: #055aaa;
+}
+
+.ps-banners-btn {
+    height: 28px !important;
+    float: right;
+    margin-right: 30px;
+}
+
+.btn-center {
+    width: fit-content;
+    width: -moz-fit-content;
+    margin: 0 auto;
+    display: block !important;
+}
+
+.campaign_banner_button {
+    display: inline;
+}
+
+.current_earnings {
+    background: rgba(46,170,2,.9);
+    width: fit-content;
+    width: -moz-fit-content;
+    padding: 18px;
+    border-radius: 3px;
+    border-left: 5px solid green;
+    text-align: center;
+    color: white;
+}
+
+.current_earnings span {
+    color: white;
+    position: relative;
+    top: -2px;
+}
+
+.ps-earnings-content {
+    margin-top: 14px;
+}
+
+.ps-earnings {
+    font-weight: 700;
+    font-size: 29px;
+    position: relative;
+    top: 1px !important;
+    margin-left: 5px;
+    line-height: 26px;
+}
+
+.ps-button-sticky-to-input {
+    width: fit-content;
+    width: -moz-fit-content;
+    text-align: center;
+}
+
+.errors
+
+.ps-button-sticky-to-input .ps-new-btn {
+    position: relative;
+    left: -6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;    
+    border-left: none;
+    border-color: #0909a5 !important;
+}
+
+.ps-button-sticky-to-input .ps-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 1px solid #0909a5 !important;
+    border-right: none;
+}
+
+.ps-mobile-center {
+    margin: 10px auto;
+    margin-bottom: 5px;
+}
+
+.ps-description {
+    display: block;
+}
+
+.ps-logo {
+    width: 500px;
+    margin: 20px auto;
+}
+
+.ps-alert.ps-error {
+    width: fit-content;
+    width: -moz-fit-content;
+    border-radius: 4px;
+    background: white;
+    padding: 9px;
+    border-left: 5px solid red;
+    width: 364px;
+    margin: 10px 0;
+}
+
+.ps-alert.ps-success {
+    width: fit-content;
+    width: -moz-fit-content;
+    border-radius: 4px;
+    background: white;
+    padding: 9px;
+    border-left: 5px solid green;
+    width: 364px;
+    margin: 10px 0;
+}
+
+.ps-alert.ps-white {
+    color:  green;
+    background: white;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 5px solid green;
+}
+
+.ps-generated-link-input {
+    width: 334px;
+}
+
+.ps-from-group label {
+    display: block;
+    margin: 5px 0;
+}
+
+.ps-select {
+    width: 320px;
+    height: 45px !important;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 6px;
+}
+
+.ps-info {
+    color: white;
+}
+
+.ps-full-width {
+    width: 100% !important;
+}
+
+.ps-full-width .ps-alert.ps-error, .ps-full-width input, .ps-full-width select {
+    width: 100% !important;
+}
+
+.ps-full-width.ps-alert.ps-error {
+    width: 94% !important;
+}
+
+.ps-left-content {
+    width: 400px;
+}
+
+.ps-capitalize {
+    text-transform: capitalize;
+}
+
+.ps-red {
+    background: #ff5151 !important;
+    border: 1px solid red !important;
+}
+
+.ps-option-btn {
+    width: 200px;
+    padding: 9px;
+    margin: 0 !important;
+}
+
+.ps-filter-title {
+    display: inline;
+    float: left;
+    position: relative;
+    top: 13px;
+    margin-right: 20px;
+    font-weight: 600;
+}
+
+.bootstrap-switch {
+    border-color: #949494 !important;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger, .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger {
+    background: #ff5151 !important;
+}
+
+.ps-filters {
+    margin: 15px 0;
+}
+
+.ps-alerts {
+    width: 100%;
+}
+
+.ps-shadow {
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px -2px;
+}
+
+.ps-form-btn {
+    width: 40% !important;
+    height: 37px !important;
+    margin-left: 5px;
+}
+
+.ps-btn {
+    width: 50%;
+    height: 40px;
+}
+
+.ps-margin {
+    margin: 25px 0;
+}
+
+.ps-no_margin {
+    margin: 0;
+}
+
+.ps-no_margin_top {
+    margin-top:0;
+}
+
+.ps-form-list .ps-input {
+    display: block;
+}
+
+.ps-alert.ps-info-alert {
+    background: white;
+    padding: 7px;
+    margin: 12px 0;
+    border-left: 3px solid #055aaa;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px -2px;
+}
+
+.ps-alert.ps-danger-alert {
+    background: #ffd17e;
+    border-left: 3px solid #f3580e;
+    font-weight: 600;
+}
+
+.ps-h3 {
+    font-size: 15px;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success, .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success {
+    background: #41b11a !important;
+}
+
+.p0 {
+    padding: 0 !important;
+}
+
+.ps_checkbox_big {
+    display: inline-block;
+    position: relative;
+    top: -1px;
+}
+
+.custom-margin {
+    margin-top: 0 !important;
+    position: relative;
+    top: -15px;
+    margin-bottom: 0 !important;
+}
+
+.ps-error-big {
+    width: 510px !important;
+}
+
+.ps_checkbox_big .bootstrap-switch {
+    height: 42px;
+}
+
+.td-padding {
+    padding: 0 !important; 
+}
+
+.ps-blue.ps-button-sticky-to-input .ps-new-btn {
+    background: #0909a5 !important;
+    border-color: #41b11a !important;
+}
+
+.ps-blue.ps-button-sticky-to-input .ps-input {
+    border-color: #41b11a !important;
+}
+
+.ps-blue.ps-button-sticky-to-input {
+    #position: relative;
+    #top: -20px;
+    #margin-right: 12px;
+    #right: -14px;
+    margin-right: 116px;    
+}
+
+.tablenav-pages-navspan, .tablenav .tablenav-pages a, .tablenav-pages-navspan {
+    padding: 1px 7px;
+    font-size: 27px;
+    height: auto;
+}
+
+ .tablenav-pages .current-page {
+    font-size: 20px;
+    height: 31px;
+    position: relative;
+    top: -2px;
+    padding: 5px 0;
+    width: 32px;
+ }
+
+.ps-generated-link.ps-right .ps-button-sticky-to-input {
+    margin-right: 116px;
+}
+
+.ps_checkbox_big .bootstrap-switch .bootstrap-switch-info {
+    height: 43px;
+}
+
+.errors-list {
+    margin: 5px 0;
+}
+
+.errors-list .alert {
+    padding: 7px 12px;
+    margin-bottom: 9px;
+}
+
+.ps_approved {
+    color: green;
+    font-weight: 700;
+}
+
+
+.ps_pending {
+    color: grey;
+}
+
+.ps_canceled {
+    color: red;
+    font-weight: 700;
+}
+
+.clear-div {
+    display: block;
+    clear: both;
+    overflow: auto;
+}
+
+.ps-alert.ps-right.ps-success {
+    width: 386px;
+}
+
+
+
+@media screen and (max-width: 782px) {
+    .ps-button-sticky-to-input .ps-input {
+        display: inline !important;
+        width: auto !important;
+        padding: 11px !important;
+    }
+    
+    .ps-alerts {
+        width: 100%;
+        display: block;
+    }
+
+    .ps-button-sticky-to-input .ps-new-btn {
+        height: 48px;
+    }
+
+    .ps-button-sticky-to-input {
+        width: fit-content;
+        width: -moz-fit-content;
+        margin: 0 auto;
+    }
+
+    .current_earnings {
+        margin: 0 auto;
+    }
+    .ps-description {
+        text-align: center;
+        display: block !important;
+        width: 50% !important;
+        margin: 0 auto;
+    }
+    .ps-mobile-center {
+        display: block !important;
+        margin: 10px auto !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .ps-right {
+        float: none;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .ps-error-big {
+        display: block;
+        margin: 20px auto !important;
+    }
+}
+
