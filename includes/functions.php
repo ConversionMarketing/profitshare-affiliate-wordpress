@@ -920,4 +920,23 @@ function ps_limit_shorten_links() {
     </script>
     <?php
 }
-?>
+
+function remove_noopener_from_links($content) {
+    preg_match("/<a.*(?=href=\"([^\"]*)\")[^>]+rel=\"noopener\">([^<]*)/", $content, $links);
+
+    $profitshareLinks = array_filter($links, function($value) {
+        if(strpos($value, "profitshare") !== false) {
+            return true;
+        }
+        return false;
+    });
+
+    foreach($profitshareLinks as $link) {
+        $newLink = str_replace('rel="noopener"', '', $link);
+        $content = str_replace($link, $newLink, $content);
+    }
+
+    return $content;
+}
+
+add_filter('the_content', 'remove_noopener_from_links');
