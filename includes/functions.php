@@ -13,6 +13,11 @@ $ps_api_config = array(
         'API_URL' => 'http://api.profitshare.bg',
         'PS_HOME' => 'http://profitshare.bg',
         'CURRENCY' => 'LEV',
+    ),
+    'DEV' => array('NAME' => 'DEV',
+        'API_URL' => 'http://api.profitshare.ps-www3-all-dev.emag.network',
+        'PS_HOME' => 'http://profitshare.ps-www3-all-dev.emag.network',
+        'CURRENCY' => 'RON',
     )
 );
 
@@ -476,6 +481,8 @@ function ps_replace_links_post($postid) {
             $shorten_link = ps_shorten_link($title, $links[$i]['url']);
             if ($shorten_link['shorten']) {
                 $total_links++;
+            } elseif(isset($shorten_link['errors'])) {
+                add_profitshare_error($shorten_link['errors']);
             }
         }
     }
@@ -526,11 +533,26 @@ function ps_replace_links_comment($comment_id) {
         $count_links = count($links);
         for ($i = 0; $i < $count_links; $i++) {
             $shorten_link = ps_shorten_link($title, $links[$i]['url']);
-            if ($shorten_link['shorten'])
+
+            if ($shorten_link['shorten']) {
                 $total_links++;
+            } elseif(isset($shorten_link['errors'])) {
+                add_profitshare_error($shorten_link['errors']);
+            }
         }
     }
     return $total_links;
+}
+
+function add_profitshare_error($text) {
+    new WP_Error('ps_error', $text);
+}
+
+function get_profitshare_errors() {
+
+?>
+
+    <?php
 }
 
 function ps_auto_convert_comments($comment_id) {
@@ -595,6 +617,10 @@ function ps_shorten_link($source, $link) {
                 )
         );
 
+        if(isset($json['result']['errors'])) {
+            $result['errors'] = $json['result']['errors'];
+        }
+
         if (!empty($json) && isset($json['result'][0]['ps_url'])) {
             $shorted = $json['result'][0]['ps_url'];
             if (isset($shorted)) {
@@ -616,12 +642,12 @@ function ps_shorten_link($source, $link) {
     return $result;
 }
 
-function ps_remove_link_protocol($link) {
+function ps_remove_link_protocol($link, $replaceWith = "//") {
     // remove https protocol
-    $link = str_replace('https://', '//', $link);
+    $link = str_replace('https://', $replaceWith, $link);
 
     // remove http protocol
-    $link = str_replace('http://', '//', $link);
+    $link = str_replace('http://', $replaceWith, $link);
 
     return $link;
 }
@@ -939,4 +965,5 @@ function remove_noopener_from_links($content) {
     return $content;
 }
 
+add_action('admin_notices', 'get_profitshare_errors');
 add_filter('the_content', 'remove_noopener_from_links');

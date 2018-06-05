@@ -1021,9 +1021,12 @@ function ps_conversions() {
 
                                 $link = esc_sql($_POST['link']);
                                 $ps_shorten_link = ps_shorten_link('WP Profitshare', $link);
-                                if (!$ps_shorten_link['result']) {
-                                    ?>
-                                <div class="ps-alert ps-right ps-error ps-error-big"><span>An error occurred or link is not part of Profitshare and can not be generated .</span></div>
+                                if (!$ps_shorten_link['result']) {?>
+                                    <?php if(isset($ps_shorten_link['errors'])): ?>
+                                        <div class="ps-alert ps-right ps-error ps-error-big"><span>You are not promoting this advertiser, click <a target="_blank" href="//app.<?php echo ps_remove_link_protocol(config('PS_HOME'), "");?>/affiliate/advertiser-catalog">here</a> to apply.</span></div>
+                                    <?php else: ?>
+                                        <div class="ps-alert ps-right ps-error ps-error-big"><span>An error occurred or link is not part of Profitshare and can not be generated .</span></div>
+                                    <?php endif;?>
                                 <?php
                             } else {
                                 ?>
