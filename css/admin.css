@@ -450,7 +450,33 @@
     width: 386px;
 }
 
+.button-top {
+    display: block;
+    clear: both;
+    overflow: auto;
+}
 
+.ps-small-btn {
+    padding: 10px;
+    text-align: center;
+    text-transform: initial;
+}
+
+.ps-small-btn.ps-small-btn {
+    transition: 1s ease all;
+}
+
+.ps-small-btn.ps-small-btn:hover {
+    color: white;
+    text-decoration: none;
+    background: #268206;
+}
+
+.ps-sm-height {
+    padding: 5px;
+    width: 50%;
+    margin: 0 auto;
+}
 
 @media screen and (max-width: 782px) {
     .ps-button-sticky-to-input .ps-input {

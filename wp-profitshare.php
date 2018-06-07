@@ -9,7 +9,7 @@
  * License: GPL2
  */
 defined('ABSPATH') || exit;
-define('PS_VERSION', '1.4.5');
+define('PS_VERSION', '1.4.7');
 
 require_once( 'includes/functions.php' );
 require_once( 'includes/class-conversions.php' );
@@ -17,6 +17,8 @@ require_once( 'includes/class-campaigns.php' );
 require_once( 'includes/class-history-links.php' );
 require_once( 'includes/class-keywords-list.php' );
 require_once( 'includes/class-tag-images-list.php' );
+require_once( 'includes/class-ps-errors.php' );
+require_once( 'includes/class-ps-helper.php' );
 
 register_activation_hook(__FILE__, 'ps_init_settings');
 register_deactivation_hook(__FILE__, 'ps_remove_settings');
@@ -130,6 +132,7 @@ function ps_add_menus() {
         #add_submenu_page('ps_account_settings', 'Campaigns', 'Campaigns', 'delete_posts', 'ps_campaigns', 'ps_campaigns');
         add_submenu_page('ps_account_settings', 'Tag Image', 'Tag Image', 'delete_posts', 'ps_tag_image', 'ps_tag_image');
         add_submenu_page('ps_account_settings', 'Link history', 'Link history', 'delete_posts', 'ps_history_links', 'ps_history_links');
+        add_submenu_page('ps_account_settings', 'Errors', 'Errors', 'delete_posts', 'ps_errors', 'ps_errors');
         add_submenu_page('ps_account_settings', 'Help', 'Help', 'delete_posts', 'ps_useful_info', 'ps_useful_info');
     }
 }
@@ -1086,16 +1089,9 @@ function ps_conversions() {
             document.location.href = removeParam('advertisers-filter', location.href);
         });
 
-        $('#ps-status-filter').live('change', function(){
-            var status_filter = $(this).val();
-
-            if(status_filter != ''){
-                document.location.href = location.href + '&conversions-status-filter='+status_filter;
-                return true;
-            }
-
-            document.location.href = removeParam('conversions-status-filter', location.href);
-        });
+       <?php
+            echo PS_Helper::getSubmitSelectScript();
+       ?>
 
         $('#conversions-min-sum-filter').live('change', function(){
             var min_sum = $(this).val();
@@ -1109,23 +1105,6 @@ function ps_conversions() {
 
         });
 
-        function removeParam(key, sourceURL) {
-            var rtn = sourceURL.split("?")[0],
-                param,
-                params_arr = [],
-                queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
-            if (queryString !== "") {
-                params_arr = queryString.split("&");
-                for (var i = params_arr.length - 1; i >= 0; i -= 1) {
-                    param = params_arr[i].split("=")[0];
-                    if (param === key) {
-                        params_arr.splice(i, 1);
-                    }
-                }
-                rtn = rtn + "?" + params_arr.join("&");
-            }
-            return rtn;
-        }
     </script>
     <?php
 }
@@ -1362,6 +1341,24 @@ function ps_tag_image_shortcode($atts) {
         return $output;
     }
 }
+
+function ps_errors() {
+    $profitshareErrors = new PS_Errors();
+    $profitshareErrors->prepare_items();
+?>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <div class="wrap">
+        <div class="ps-logo">
+            <a href="<?php echo config('PS_HOME'); ?>">
+                <img src="https://profitshare.ro/assets/img/logos/_logo-menu-profitshare.svg" alt="Profitshare">
+            </a>
+        </div>
+        <h2 class="ps-h ps-margin">Profitshare errors</h2>
+        <?php $profitshareErrors->display(); ?>
+    </div>
+<?php }
+
 
 function ps_history_links() {
     if (isset($_GET['batch']) && in_array($_GET['batch'], array('posts', 'pages', 'comments'))) {

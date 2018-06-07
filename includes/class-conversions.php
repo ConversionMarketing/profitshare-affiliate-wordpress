@@ -137,7 +137,7 @@ class Conversions extends WP_List_Table {
 				?>
 
 				<?php if($conversions_status_list):?>
-					<select name="conversions-status-filter" class="ps-select" id="ps-status-filter">
+					<select name="conversions-status-filter" class="ps-select" id="ps-status-filter" parameter_name="conversions-status-filter">
 		                <option value="">Status</option>
 		                <?php
 			                foreach($conversions_status_list as $conv_status){

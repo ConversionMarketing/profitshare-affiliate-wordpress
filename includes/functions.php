@@ -13,11 +13,6 @@ $ps_api_config = array(
         'API_URL' => 'http://api.profitshare.bg',
         'PS_HOME' => 'http://profitshare.bg',
         'CURRENCY' => 'LEV',
-    ),
-    'DEV' => array('NAME' => 'DEV',
-        'API_URL' => 'http://api.profitshare.ps-www3-all-dev.emag.network',
-        'PS_HOME' => 'http://profitshare.ps-www3-all-dev.emag.network',
-        'CURRENCY' => 'RON',
     )
 );
 
@@ -111,6 +106,14 @@ function ps_init_settings() {
                 PRIMARY KEY (`ID`)
         )CHARSET=utf8;";
 
+    $queries[] = "CREATE TABLE IF NOT EXISTS " . $wpdb->prefix . "ps_errors (
+		`ID` mediumint(9) NOT NULL auto_increment,
+        `message` text NOT NULL,
+		`status` enum('active', 'inactive') default 'active',
+        `created_at` DATETIME,
+        `updated_at` DATETIME,
+		PRIMARY KEY (`ID`)
+		)CHARSET=utf8;";
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
     foreach ($queries as $query) {
         dbDelta($query);
@@ -545,10 +548,26 @@ function ps_replace_links_comment($comment_id) {
 }
 
 function add_profitshare_error($text) {
-    new WP_Error('ps_error', $text);
+    global $wpdb;
+    $insert_data = array(
+        'message' => $text,
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s'),
+    );
+
+    $wpdb->insert($wpdb->prefix . "ps_errors", $insert_data);
 }
 
 function get_profitshare_errors() {
+    $errors = new PS_Errors();
+    if(empty($errors->get_errors(PS_Errors::STATUS_ACTIVE)) || $_GET['page'] == 'ps_errors') {
+        return;
+    }
+    ?>
+        <div class="error notice">
+            <p><?php _e("You have errors in Profitshare module! <a href='".admin_url('admin.php?page=ps_errors')."'>Click here</a> to check them. ", 'profitshare_error' ); ?></p>
+        </div>
+    <?php
 
 ?>
 
